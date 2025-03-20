@@ -7,16 +7,9 @@ import cors from 'cors';
 const app = express();
 const PORT = 5000;
 
-
-const corsOptions = {
-    origin: ['http://localhost:5173'], // Add your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true, // Allows sending cookies/auth headers
-};
 // Middleware to parse JSON
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Database Connection
 const DB_URI = 'mongodb+srv://anaintay4:anaintay4@cluster0.fpl6n.mongodb.net/';
